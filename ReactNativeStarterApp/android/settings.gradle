@@ -1,0 +1,7 @@
+rootProject.name = 'AppStarter'
+include ':react-native-splash-screen'
+project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+include ':react-native-app-settings'
+project(':react-native-app-settings').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-app-settings/android')
+
+include ':app'
