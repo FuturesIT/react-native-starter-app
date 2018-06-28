@@ -1,5 +1,4 @@
-import axios from 'axios';
-import routes from './routes';
+import apiConfig from './api-config';
 
 const NoInternetError = 'The internet connection appears to be offline. Please try again later';
 
@@ -50,6 +49,7 @@ export const handleResponseError = ({ response, request }) => {
   };
 };
 
+
 /**
  * @param method request method GET POST PUT DELETE
  * @param url url of request
@@ -59,15 +59,15 @@ export const handleResponseError = ({ response, request }) => {
  */
 export default async (method, url, params, data, isAbsoluteUrl) => {
   try {
-    const headers = {};
+    // const headers = {};
     // if (GlobalStore.token) {
     //   headers.Authorization = `Bearer ${GlobalStore.token.value}`;
     // }
-    const response = await axios.create({
-      baseURL: isAbsoluteUrl ? '' : routes.BaseUrl,
-      timeout: 30000,
-      headers,
-    }).request({
+
+    // Alter defaults of axios instance
+    // apiConfig.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+
+    const response = await apiConfig.request({
       method, url, params, data,
     });
     return handleResponseSuccess(response);

@@ -24,6 +24,7 @@ export default class RegisterScreen extends BaseComponent {
     const error = Validator.validateRegister(data);
     if (error) {
       Alert.alert('Error', error);
+      return;
     }
     GlobalStore.showLoading();
     const result = await UserApi.register(data);
