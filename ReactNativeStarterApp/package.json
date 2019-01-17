@@ -14,7 +14,6 @@
     "mobx-react": "^5.2.0",
     "mobx-state-tree": "^2.0.5",
     "moment": "^2.22.2",
-    "native-base": "^2.4.1",
     "prop-types": "^15.6.2",
     "react": "16.2.0",
     "react-native": "0.55.4",
